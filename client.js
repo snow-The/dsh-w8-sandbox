@@ -82,7 +82,7 @@ window.__ModuleLoader__.load({
       try {
         ctx.slots.inject('conversation.session.header.actions', () =>
           ctx.slots.register({ name: 'conversation.session.header.actions', id: 'w8-sandbox-open', component: HeaderButton }));
-      } catch (e) { console.warn('[w8-sandbox] slot inject failed:', e); }
+      } catch (e) { console.warn('[dsh-w8-sandbox] slot inject failed:', e); }
     };
     return module.exports;
   },
