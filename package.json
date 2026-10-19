@@ -32,17 +32,17 @@
       "platform": "web",
       "inject": [
         "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-primitives"
+        "@deepseek-ai/dsh-client-ui-conversation"
       ],
       "immediately": true
     },
     "compatibility": {
       "dshReleases": [
         "0.2.0-rc.1",
-        "0.2.0-rc.2"
+        "0.2.0-rc.2",
+        "0.2.1-rc.2"
       ],
-      "verifiedAgainst": "0.2.0-rc.2"
+      "verifiedAgainst": "0.2.1-rc.2"
     }
   },
   "scripts": {
@@ -50,5 +50,8 @@
   },
   "peerDependencies": {
     "@deepseek-ai/dsh": ">=0.2.0-rc.1"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
   }
 }
