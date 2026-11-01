@@ -11,10 +11,10 @@
 
 | 项 | 值 |
 |---|---|
-| `dsh.compatibility.dshReleases` | ["0.2.0-rc.1","0.2.0-rc.2"] |
-| `dsh.compatibility.verifiedAgainst` | `0.2.0-rc.2` |
-| 官方 peer 声明 | `dsh` >=0.2.0-rc.1 |
-| 本次宿主判定（`0.2.0-rc.2`） | **PASS** |
+| `dsh.compatibility.dshReleases` | ["0.2.1-rc.5"] |
+| `dsh.compatibility.verifiedAgainst` | `0.2.1-rc.5` |
+| 官方 peer 声明 | `dsh` >=0.2.1-rc.5 |
+| 本次宿主判定（`0.2.0-rc.2`） | **FAIL** |
 
 ## 门禁到底是什么（宿主实际执行的判定）
 
@@ -43,7 +43,7 @@
 ```
 插件        @snow-the/dsh-w8-sandbox@0.1.0
 宿主        0.2.0-rc.2
-判定        PASS（peerDependencies 无冲突，不会被禁用）
+判定        FAIL  {"@deepseek-ai/dsh":">=0.2.1-rc.5"}
 ```
 
 **这个判定的含义要说清楚：它只证明「宿主不会在预检阶段禁用本插件」。它不证明插件能正常工作。**
@@ -69,7 +69,7 @@
 connection, get, inject, slots, webServer
 ```
 
-客户端面：`dsh.client.platform = "web"`，`inject = ["@deepseek-ai/dsh-client-locale","@deepseek-ai/dsh-client-ui-conversation","@deepseek-ai/dsh-client-ui-primitives"]`。
+客户端面：`dsh.client.platform = "web"`，`inject = ["@deepseek-ai/dsh-client-locale","@deepseek-ai/dsh-client-ui-conversation"]`。
 
 `dsh.client.inject` 列的是**包名**（客户端模块图里必须先加载的包），与服务注入（模块自己 `exports.inject` 里的**服务名**，如 `slots`/`locale`/`sessions`）**是两回事**。
 
