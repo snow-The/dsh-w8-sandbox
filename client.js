@@ -81,7 +81,11 @@ window.__ModuleLoader__.load({
     module.exports.apply = (ctx) => {
       try {
         ctx.slots.inject('conversation.session.header.actions', () =>
-          ctx.slots.register({ name: 'conversation.session.header.actions', id: 'w8-sandbox-open', component: HeaderButton }));
+          // order 必须显式给：没给 order 的注册，位置由**加载顺序**决定 ——
+          // 今天在「撤销」按钮右边，加一个插件就可能跑到左边。实测该 slot 的
+          // 另一个注册者是 dsh-undo-savepoint 的 `undo-buttons` @ order 10，
+          // 我们排在它后面（20），语义是「先撤销，再进沙盒」。
+          ctx.slots.register({ name: 'conversation.session.header.actions', id: 'w8-sandbox-open', order: 20, component: HeaderButton }));
       } catch (e) { console.warn('[dsh-w8-sandbox] slot inject failed:', e); }
     };
     return module.exports;
