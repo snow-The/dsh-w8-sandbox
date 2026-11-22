@@ -1,6 +1,10 @@
 {
   "name": "@snow-the/dsh-w8-sandbox",
   "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snow-The/dsh-w8-sandbox.git"
+  },
   "description": "w8 world sandbox demo: floating iframe showing the sandbox schematic (map layers, characters, society, narrative, T1/T2/T3).",
   "type": "module",
   "main": "./index.js",
